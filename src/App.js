@@ -2,8 +2,12 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./views/Home"
-import Demo from "./views/Demo"
-import Details from "./views/Details"
+import Movies from "./views/Movies";
+import Tv from "./views/Tv";
+import People from "./views/People";
+import MoviesDetails from "./views/MoviesDetails";
+import TvDetails from "./views/TvDetails";
+
 
 
 function App() {
@@ -15,11 +19,20 @@ function App() {
           <Route exact path="/">
             <Home/>
           </Route>
-          <Route exact path="/demo">
-            <Demo/>
+          <Route exact path="/Movies">
+            <Movies/>
           </Route>
-          <Route exact path="/demo/:id">
-            <Details/>
+          <Route exact path="/Movies/:id">
+            <MoviesDetails/>
+          </Route>
+          <Route exact path="/Tv">
+            <Tv/>
+          </Route>
+          <Route exact path="/Tv/:id">
+            <TvDetails/>
+          </Route>
+          <Route exact path="/People">
+            <People/>
           </Route>
           <Route to="*">
             <h2>Not found - 404</h2>
