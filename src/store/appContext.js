@@ -19,8 +19,9 @@ import getState from "./flux.js"; //importamos getState
 			state.actions.loadMovies();
       state.actions.loadUpComing();
       state.actions.loadTrending();
-      state.actions.loadShows();
+      state.actions.loadTv();
       state.actions.loadPeople();
+      state.actions.loadCarousel();
 		}, []);
 
 

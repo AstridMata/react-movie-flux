@@ -22,12 +22,12 @@ const Trending = () => {
       {store.trending.map((x, i) => {
         return <div className="card text-white border-0">
         <img
-          src={"https://image.tmdb.org/t/p/original" + x.backdrop_path}
+          src={"https://image.tmdb.org/t/p/original" + x.poster_path}
           className="card-img"
           alt="..."
         />
         <div className="card-img-overlay d-flex justify-content-start align-items-end">
-        <div classname="card-title">{x.title}</div>
+        
         </div>
       </div>
       })}

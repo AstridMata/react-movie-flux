@@ -11,11 +11,12 @@ const Home = () => {
             <Carousel/>
           </div>
           <div>
-            <h1>Upcoming-Movies</h1>
+          <h3 style={{textAlign: 'center', marginTop: "4rem",}}>Up Coming</h3>
             <UpComing/>
           </div>
           <div>
-            <h2>Trending</h2>
+          <h3 style={{textAlign: 'center', marginTop: "4rem",}}>Trending</h3>
+          
             <Trending/>
           </div>
         </>

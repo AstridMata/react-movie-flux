@@ -1,7 +1,9 @@
 import { Link} from "react-router-dom";
+import React, {useContext} from 'react';
+import { Context } from "../store/appContext";
 
 const CardTv = (props) => {
-    console.log(props);
+  const { store, actions } = useContext(Context);
  
     return (
         <div className="card p-0 m-2 bg-transparent border-0 gray" style={{ width: "13rem" }}>

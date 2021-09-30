@@ -9,7 +9,7 @@ const People = () => {
     return (
       <div className="container-fluid ps-5 d-flex gradiente2">
         <div className="row">
-          {store.people.map((item) => (
+          {store.people?.map((item) => (
             <CardPeople
               key={item.id}
               title={item.name}

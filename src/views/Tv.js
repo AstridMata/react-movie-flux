@@ -10,7 +10,7 @@ const Tv = () => {
         <div className="container-fluid foto d-flex">
           <div className="ms-5 ps-5">
             <div className="row">
-              {store.shows.map((item) => (
+              {store.tv?.map((item) => (
                 <CardShows
                   key={item.id}
                   title={item.original_name}
