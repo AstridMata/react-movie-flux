@@ -1,7 +1,6 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-
 			movies: [],
 			tv: [],
 			people: [],
@@ -18,12 +17,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addFav: favorito => {
 				setStore({
 					// favoritos = favoritos en store + lo nuevo que viene por el parametro
-					favourites: getStore().favourites.concat(favorito)
+					favoritos: getStore().favoritos.concat(favorito)
 				});
 			},
 			removFav: favorito => {
 				setStore({
-					favourites: getStore().favourites.filter(function (item, index) {
+					favourites: getStore().favoritos.filter(function (item, index) {
 						// return favorito.id !== item.id;
 						if (favorito.id !== item.id) {
 							return item;
@@ -36,27 +35,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 			loadMovies: () => {
 				fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_MOVIE_}`)
 					.then((response) => response.json())
-					.then(data => setStore({ movies: data.result }));
+					.then(data => setStore({ movies: data.results }));
 			},
 
 			loadTv: () => {
 				fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_MOVIE_}`)
 					.then((response) => response.json())
-					.then(data => setStore({ tv: data.result }));
+					.then(data => setStore({ tv: data.results }));
 
 			},
 
 			loadPeople: () => {
 				fetch(`https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_MOVIE_}`)
 					.then((response) => response.json())
-					.then(data => setStore({ people: data.result }));
+					.then(data => setStore({ people: data.results }));
 
 			},
 
 			loadMovieDetails: (id) => {
 				fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_MOVIE_}`)
 					.then((response) => response.json())
-					.then(data => setStore({ moviesDetails: data.result }));
+					.then(data => setStore({ moviesDetails: data.results }));
 			},
 
 			loadUpComing: () => {

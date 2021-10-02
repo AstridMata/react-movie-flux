@@ -1,11 +1,11 @@
-import { Link} from "react-router-dom";
 import React, {useContext} from 'react';
 import { Context } from "../store/appContext";
+import { Link} from "react-router-dom";
 
 
 const CardMovies = (props) => {
 
-  const {store, actions } = useContext(Context);
+  const {actions} = useContext(Context);
   
     return (
       <div
@@ -22,8 +22,8 @@ const CardMovies = (props) => {
             <button type="button" className="btn btn-outline-warning me-5">More</button>
           </Link>
           <button type="button" className="btn btn-outline-danger ms-3" onClick={() => {
-								actions.addFav();
-							}}></button>
+								actions.addFav(props.title);
+							}}>+</button>
         </div>
       </div>
     );

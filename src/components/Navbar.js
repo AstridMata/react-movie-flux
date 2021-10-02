@@ -5,6 +5,7 @@ import { Context } from "../store/appContext";
 const Navbar = () => {
   
   const { store, actions } = useContext(Context);
+
   return (
 
     <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -29,31 +30,25 @@ const Navbar = () => {
       </li>
       </ul>
       <div className="dropdown dropleft">
-      
       <button
       className="btn dropdown-toggle btn-outline-info"
-      type ="button"
+      type="button"
       id="dropdownMenuButton"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false">
-    {store.favourites + `Favourites`}
+      role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Favoritos
       </button>
       
       <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    {store.favourites?.map((item, index) => {
+    {store.favoritos.map((item, index) => {
       return (
-      <Link key={index} className="dropdown-item" to="/">
-    {item}{" "}
-      
+        <div key={index}>
+      <Link className="dropdown-item" to="/">
+    {item}
+    </Link>
       <button
       className="btn"
-      onClick={() => {
-      actions.removFav(item);
-    }}>
-      h
-      </button>
-      </Link>
+      onClick={() => actions.removFav(item)}></button>
+      </div>
     );
     })}
       </div>
